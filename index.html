@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+  </head>
+  <body>
+
+    <div id="app">
+      <p v-show="message !== '' && age !== 0 && food !== '-'">Hello, my name is {{ name }}. I am {{ age }} years old, and my favorite food is {{ food }}.</p>
+      <p>Name: <input type="text" v-model="name" class="name" /></p>
+      <p>Age: <input type="number" v-model="age" class="age" /></p>
+      <p>Favorite Food: <select v-model="food" class="food">
+        <option value="-">Select an Option</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Hamburgers">Hamburgers</option>
+        <option value="Spaghetti">Spaghetti</option>
+        <option value="Broccoli">Broccoli</option>
+      </select></p>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js" charset="utf-8"></script>
+    <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        name: '', // now the input is manipulating the data object directly
+        food: '-',
+        age: 0
+      }
+    })
+    </script>
+  </body>
+</html>
